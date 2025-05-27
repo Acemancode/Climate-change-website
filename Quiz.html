@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenVibe - Climate Quiz Challenge!</title>
+    <link rel="stylesheet" href="quiz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="siteheader">
+        <div id="logo">
+            <a href="index.html">Green<span>Vibe</span></a>
+        </div>
+        <div class="menuToggle" id="mobileMenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="Home.html">✨Home</a></li>
+                <li><a href="learn.html">🎓Learn</a></li>
+                  <li><a href="Quiz.html">✍️Quiz</a></li>
+                <li><a href="blog.html">📝Blog</a></li>
+                  <li><a href="resources.html">📚Resources</a></li>
+                   <li><a href="About.html">About</a></li>
+                <li><a href="Movement.html"><button class="cta">Contact</button></li></a>
+            </ul>
+        </nav>
+    </header>
+    <main class="maincontent">
+        <div class="quizwrapper" id="quizWrapper">
+
+            <div class="quizscreen active" id="startScreen">
+                <h1>Climate Quiz <span>Challenge!</span></h1>
+                <p>Think you know your stuff about Ghana's climate? <br> Test your knowledge and see if you can top the leaderboard!</p>
+                <button class="btn bigbtn" id="startButton">Let's Vibe! 🔥</button>
+                <button class="btn secondarybtn" id="viewLeaderboardButtonStart">View Leaderboard 🏆</button>
+            </div>
+
+            <div class="quizscreen" id="quizScreen">
+                <div class="quizheader">
+                    <div class="questioncounter">Question <span id="questionNumber">1</span>/<span id="totalQuestions">5</span></div>
+                    <div class="scoredisplay">Score: <span id="score">0</span></div>
+                </div>
+                <div class="progressbar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <h2 id="questionText">What is the main human activity causing climate change today?</h2>
+                <div class="optionsgrid" id="optionsGrid">
+                    </div>
+                <div class="feedback" id="feedback"></div>
+                <button class="btn nextbtn" id="nextButton" style="display: none;">Next Question <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="quizscreen" id="endScreen">
+                <i class="fas fa-party-popper finalicon"></i>
+                <h2>Quiz Complete!</h2>
+                <p>Your Final Score: <span id="finalScore" class="bigscore">0</span></p>
+                <p>Your Climate Rank: <span id="climateRank" class="rank">🌱 Sprout</span></p>
+                <div class="leaderboardentry">
+                    <p>Enter your name to join the leaderboard!</p>
+                    <input type="text" id="playerName" placeholder="Enter Your Nickname">
+                    <button class="btn savebtn" id="saveScoreButton">Save Score & View 🏆</button>
+                </div>
+                <button class="btn playagainbtn" id="playAgainButton">Play Again? 🤔</button>
+            </div>
+
+             <div class="quizscreen" id="leaderboardScreen">
+                 <h2><i class="fas fa-trophy"></i> GreenVibe Champs!</h2>
+                 <ol class="leaderboardlist" id="leaderboardList">
+                     <li><span>Loading...</span> <span>--</span></li>
+                 </ol>
+                 <button class="btn backbtn" id="backButton">Go Back</button>
+            </div>
+
+        </div>
+    </main>
+
+  <footer>
+        <div class="container footer-content">
+            <div class="footer-about">
+                <div class="logo">GreenVibe</div>
+                <p>Empowering Ghanaian youth to protect our beautiful city and ecosystem.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="learn.html">Learn</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="Movement.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p>123 Green Street, Accra</p>
+                <p>+233 XX XXX XXXX</p>
+                <p>info@greenvibe.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 GreenVibe.com, All Rights Reserved.</p>
+                <ul>
+                    <li><a href="#">Terms Of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="script_quiz.js"></script> 
+</body>
+</html>
