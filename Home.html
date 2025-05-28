@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenVibe</title>
     <link rel="stylesheet" href="Styles.css"> 
+          <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
@@ -42,7 +44,8 @@
                     <a href="learn.html" class="btn htbtn">Explore why</a>
                 </div>
                 <div class="firstimage">
-                    <img src="images/6441883.jpg" alt="People planting trees illustration">
+                    <img src="images/6441883.jpg" alt="People planting trees illustration" data-aos="fade-down-left" 
+                        data-aos-duration="3000">
                 </div>
             </div>
         </section>
@@ -147,6 +150,9 @@
     </footer>
 
     <script src="script.js"></script>
+     <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
