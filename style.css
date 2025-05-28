@@ -215,6 +215,7 @@ nav ul li a {
 @media (max-width: 992px) {
    .menuToggle {
     display: flex;
+     z-index: 1000;
   }
   
 
@@ -228,6 +229,7 @@ nav ul li a {
     /* height: 100vh; */
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
+    z-index: 900;
   }
 
   nav.active {
@@ -313,7 +315,6 @@ nav ul li a {
     height: 100vh;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 10000;
   }
 
   nav.active {
