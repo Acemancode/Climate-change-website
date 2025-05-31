@@ -43,18 +43,15 @@ a {
     color: inherit;
 }
 
-header {
+.siteheader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 32px;
     background-color: #2e7d32cf;
     color: white;
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; */
+    position: relative;
+    z-index: 1000;
 }
 
 #logo {
@@ -74,6 +71,7 @@ header {
     flex-direction: column;
     cursor: pointer;
     z-index: 1001;
+    padding: 5px;
 }
 
 .menuToggle .bar {
@@ -96,14 +94,7 @@ header {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-
-/* nav {
-  position: relative;
-  z-index: 1;
-} */
-
-
-nav ul {
+#mainNav ul {
     list-style: none;
     display: flex;
     gap: 40px;
@@ -112,34 +103,34 @@ nav ul {
     align-items: center;
 }
 
-nav ul li a {
+#mainNav ul li a {
     text-decoration: none;
     color: white;
     font-weight: 500;
     font-size: 1.2em;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
 }
 
-.whats-hot {
-    color: #1E90FF;
-    font-weight: bold;
+#mainNav ul li a:hover {
+    color: var(--accent-yellow);
 }
 
 .cta {
     color: #000;
     font-family: inherit;
     display: inline-block;
-    width: 8em;
-    height: 2.6em;
-    line-height: 2.5em;
+    padding: 10px 20px;
     overflow: hidden;
     cursor: pointer;
     font-size: 17px;
     z-index: 1;
-    color: #000;
     border-radius: 15px;
     border: none;
     position: relative;
     text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta::before {
@@ -150,16 +141,13 @@ nav ul li a {
     height: 200px;
     z-index: -1;
     border-radius: 50%;
+    top: 100%;
+    left: 100%;
+    transition: all 0.3s ease;
 }
 
 .cta:hover {
-    color: rgb(15, 15, 15);
-}
-
-.cta:before {
-    top: 100%;
-    left: 100%;
-    transition: 0.3s all;
+    color: var(--primary-dark-green);
 }
 
 .cta:hover::before {
@@ -167,7 +155,6 @@ nav ul li a {
     left: -30px;
 }
 
-/* Content Styles with Single-Word Classes */
 .maincontent {
     padding-top: 20px;
 }
@@ -184,14 +171,18 @@ nav ul li a {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
+    /* Default for larger screens */
     gap: 50px;
+    /* Default gap */
     align-items: center;
 }
 
 .grid.reversed {
     grid-template-columns: 1.5fr 1fr;
+    /* Default for larger screens, reversed order */
 }
 
+/* Ensure consistent order for text/image on larger screens when reversed */
 .grid.reversed .text {
     grid-column: 1;
     grid-row: 1;
@@ -230,11 +221,9 @@ nav ul li a {
 
 .text ul {
     list-style: circle;
+    padding-left: 20px;
 }
 
-/* Keep a basic list style */
-
-/* Footer Styles with Single-Word Classes */
 .sitefooter {
     background-color: var(--primary-dark-green);
     color: #c0c0c0;
@@ -258,12 +247,10 @@ nav ul li a {
 }
 
 .footerlogo {
-    /* Changed .logo to .footerlogo inside footer */
     margin-bottom: 15px;
     font-size: 2em;
     color: var(--accent-yellow);
     font-weight: 700;
-    /* Added for consistency */
 }
 
 .footerabout p {
@@ -278,16 +265,14 @@ nav ul li a {
     color: var(--text-white);
 }
 
-.footerlinks ul li {
-    margin-bottom: 8px;
+.footerlinks ul {
+    padding-left: 0;
     list-style-type: none;
 }
 
-.footerlinks ul {
-    padding-left: 0;
+.footerlinks ul li {
+    margin-bottom: 8px;
 }
-
-/* Remove padding for footer lists */
 
 .footerlinks a,
 .footercontact p {
@@ -324,11 +309,11 @@ nav ul li a {
 .footerbottom ul {
     display: flex;
     padding-left: 0;
+    list-style-type: none;
 }
 
 .footerbottom ul li {
     margin-left: 15px;
-    list-style-type: none;
 }
 
 .footerbottom a {
@@ -340,10 +325,7 @@ nav ul li a {
     color: var(--accent-yellow);
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
-
-    /* User's breakpoint for menu */
     .siteheader {
         padding: 16px 20px;
     }
@@ -353,17 +335,19 @@ nav ul li a {
     }
 
     #mainNav {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 1000;
+        height: 100vh;
         background-color: #256a28ea;
-        padding-top: 70px;
-        /* height: calc(500vh - 70px); */
+        padding-top: 90px;
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
-        z-index: 1000;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #mainNav.active {
@@ -373,30 +357,34 @@ nav ul li a {
     #mainNav ul {
         flex-direction: column;
         align-items: center;
-        gap: 60px;
-        padding-top: 20px;
+        gap: 30px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #mainNav ul li {
+        width: 100%;
+        text-align: center;
     }
 
     #mainNav ul li a {
-        font-size: 1.3em;
+        font-size: 1.5em;
+        padding: 15px 0;
     }
 
     .cta {
-        width: auto;
-        padding: 10px 20px;
-        font-size: 1em;
-        height: auto;
-        line-height: normal;
+        padding: 12px 25px;
+        font-size: 1.1em;
     }
 
     .cta::before {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
     }
 
     .cta:hover::before {
-        top: -20px;
-        left: -20px;
+        top: -25px;
+        left: -25px;
     }
 }
 
@@ -412,9 +400,9 @@ nav ul li a {
     .grid .image,
     .grid.reversed .image {
         order: -1;
-        /* Image always on top when stacked */
         margin-bottom: 20px;
     }
+
 
     .grid.reversed .text,
     .grid .text {
@@ -431,12 +419,26 @@ nav ul li a {
     }
 
     .text ul {
-        text-align: left;
+        text-align: center;
         display: inline-block;
+        margin: 0 auto;
+        padding-left: 20px;
+    }
+
+    .text ul li {
+        list-style: circle;
+        text-align: center;
     }
 }
 
+
 @media (max-width: 768px) {
+
+    .grid,
+    .grid.reversed {
+        gap: 20px;
+    }
+
     .text h2 {
         font-size: 2em;
     }
@@ -446,9 +448,42 @@ nav ul li a {
         font-size: 1em;
     }
 
+    .image img {
+        max-height: 200px;
+    }
+
+    .text ul {
+        padding-left: 15px;
+    }
+
     .footercontent {
         flex-direction: column;
         text-align: center;
+    }
+
+    .footerabout,
+    .footerlinks,
+    .footercontact {
+        min-width: unset;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footerabout:last-child,
+    .footerlinks:last-child,
+    .footercontact:last-child {
+        margin-bottom: 0;
+    }
+
+    .footerlinks ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footerlinks ul li {
+        margin-bottom: 0;
     }
 
     .footerbottom .container {
@@ -457,6 +492,7 @@ nav ul li a {
 
     .footerbottom ul {
         margin-top: 10px;
+        justify-content: center;
     }
 
     .footerbottom ul li {
@@ -466,7 +502,7 @@ nav ul li a {
 
 @media (max-width: 480px) {
     #logo {
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
 
     .text h2 {
@@ -474,6 +510,14 @@ nav ul li a {
     }
 
     .image img {
-        max-height: 200px;
+        max-height: 150px;
+    }
+
+    .text ul {
+        padding-left: 10px;
+    }
+
+    .siteheader {
+        padding: 12px 15px;
     }
 }
