@@ -469,7 +469,7 @@ nav ul li a {
 /* Footer Styles */
 footer {
     background-color: var(--primary-green);
-    color: var(--text-light);
+    color: White;
     padding-top: 40px;
 }
 
@@ -592,13 +592,18 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .footercontent {
+   .footer-content {
         flex-direction: column;
         text-align: center;
     }
-
-    .footerbottom .container {
+    .footer-bottom .container {
         flex-direction: column;
+    }
+    .footer-bottom ul {
+        margin-top: 10px;
+    }
+     .footer-bottom ul li {
+        margin: 0 8px;
     }
 }
 
