@@ -274,7 +274,7 @@ nav ul li a {
 .footerlogo {
     margin-bottom: 15px;
     font-size: 2em;
-    color: yellow;
+    color: White;
     font-weight: 700;
 }
 
@@ -284,11 +284,10 @@ nav ul li a {
     color: var(--text-light-grey);
 }
 
-.footerlinks h4,
-.footercontact h4 {
+.footer-links h4, .footer-contact h4 {
     font-size: 1.2em;
     margin-bottom: 15px;
-    color: var(--text-white);
+    color: var(--accent-yellow);
 }
 
 .footerlinks ul li {
