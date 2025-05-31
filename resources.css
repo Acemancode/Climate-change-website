@@ -350,10 +350,10 @@ footer {
     flex: 1;
     min-width: 200px;
 }
-.footer-about .logo { /* Make sure footer logo gets styled */
+.footer-about .logo { 
     margin-bottom: 15px;
     font-size: 2em;
-    color: yellow; /* Make it white or yellow */
+    color: White;
     font-weight: 700;
 }
 .footer-about p {
@@ -483,17 +483,18 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .footercontent {
+    .footer-content {
         flex-direction: column;
         text-align: center;
     }
-
-    .footerbottom .container {
+    .footer-bottom .container {
         flex-direction: column;
     }
-
-    .footerbottom ul {
+    .footer-bottom ul {
         margin-top: 10px;
+    }
+     .footer-bottom ul li {
+        margin: 0 8px;
     }
 }
 
