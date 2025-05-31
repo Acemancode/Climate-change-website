@@ -287,7 +287,7 @@ nav ul li a {
 .footer-links h4, .footer-contact h4 {
     font-size: 1.2em;
     margin-bottom: 15px;
-    color: var(--accent-yellow);
+    color: Yellow;
 }
 
 .footerlinks ul li {
