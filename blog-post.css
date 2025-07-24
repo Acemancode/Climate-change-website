@@ -1,0 +1,307 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-color: #006847; /* Deep Green */
+            --secondary-color: #333; /* Dark Grey for Text */
+            --accent-color: #FCD116;  /* Gold/Yellow */
+            --background-color: #f4f4f4;
+            --white-color: #FFFFFF;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--secondary-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #2e7d32cf;
+  color: white;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; */
+}
+
+#logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  z-index: 1001;
+}
+
+#logo span {
+  color: white;
+  font-style: normal;
+}
+#logo a {
+  color: white;
+  text-decoration: none;
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menuToggle .bar {
+  background: white;
+  height: 3px;
+  width: 25px;
+  margin: 3px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuToggle.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.menuToggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menuToggle.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* nav {
+  position: relative;
+  z-index: 1;
+} */
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.cta {
+  color: #000;
+  font-family: inherit;
+  font-weight: 600;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 17px;
+  z-index: 1;
+  color: #000;
+  border-radius: 15px;
+  border: none;
+  position: relative;
+  text-align: center;
+}
+
+.cta::before {
+  position: absolute;
+  content: "";
+  background: #5CE65C;
+  width: 190px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.cta:hover {
+  color: rgb(255, 255, 255);
+}
+
+.cta:before {
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+.cta:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+        /* --- Article Styles --- */
+        .blog-post {
+            background-color: var(--white-color);
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .post-meta {
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .post-meta span {
+            margin-right: 15px;
+        }
+
+        .post-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .post-title {
+            font-size: 2.5em;
+            color: var(--secondary-color);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .post-content h3 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-top: 30px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+        
+        .post-content strong {
+            color: #000;
+        }
+
+        blockquote {
+            border-left: 5px solid var(--primary-color);
+            margin: 25px 0;
+            padding: 15px 20px;
+            background-color: #f0f7f5;
+            font-style: italic;
+            font-size: 1.1em;
+            color: #2c554a;
+        }
+
+        .call-to-action ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .call-to-action li {
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .call-to-action li:before {
+            content: '💧';
+            margin-right: 10px;
+        }
+
+
+         .call-to-action ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .call-to-action3 li {
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .call-to-action3 li:before {
+            content: '🌞';
+            margin-right: 10px;
+        }
+
+                 .call-to-action3 ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .call-to-action4 li {
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .call-to-action4 li:before {
+            content: '🌰';
+            margin-right: 10px;
+        }
+                 .call-to-action5 ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .call-to-action5 li {
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .call-to-action5 li:before {
+            content: '🧵';
+            margin-right: 10px;
+        }
+                 .call-to-action6 ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .call-to-action6 li {
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .call-to-action6 li:before {
+            content: '🚯';
+            margin-right: 10px;
+        }
+
+
+        /* --- Comments Section --- */
+        .comments-section {
+            margin-top: 40px;
+        }
+        
+        .comment {
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background: var(--background-color);
+            margin-bottom: 15px;
+        }
+        .comment-meta {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .comment-meta span {
+            font-weight: normal;
+            color: #777;
+            font-size: 0.8em;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .post-title {
+                font-size: 2em;
+            }
+            .blog-post {
+                padding: 20px;
+            }
+        }
